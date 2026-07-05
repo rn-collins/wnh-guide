@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WNH — Women's Neuro-Health | Primary-Source Guidance</title>
+  <meta name="description" content="Sex-disaggregated neuroscience on cannabis and psychedelics, translated for women and the clinicians who care for them." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --nsag: #4D45A8;
+      --nsag-light: #6B63C4;
+      --nsag-pale: #EEF0FF;
+      --bg: #F6F3EC;
+      --text: #1C1B1F;
+      --text-muted: #5A5869;
+      --border: #D8D5CE;
+      --white: #FFFFFF;
+      --brand: #5B7B5A;
+      --brand-light: #6E9270;
+      --brand-pale: #EEF3EE;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Manrope', sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      background-color: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--brand);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .nav-back {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-back:hover {
+      color: var(--nsag);
+    }
+
+    /* HERO */
+    .hero {
+      background-color: var(--brand);
+      color: var(--white);
+      padding: 5rem 2rem 5.5rem;
+    }
+
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero .section-label {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.15;
+      margin-bottom: 1.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-sub {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 640px;
+      margin-bottom: 2.4rem;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border-radius: 3px;
+      transition: opacity 0.2s ease, transform 0.15s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .btn-hero {
+      background-color: var(--white);
+      color: var(--brand);
+    }
+
+    .btn-brand {
+      background-color: var(--brand);
+      color: var(--white);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* ABOUT */
+    .about {
+      background-color: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about .section-label {
+      color: var(--brand);
+    }
+
+    .about h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    .about p {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 1.3rem;
+    }
+
+    .about p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* OFFER */
+    .offer {
+      background-color: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .offer .section-label {
+      color: var(--brand);
+    }
+
+    .offer h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    .offer-desc {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 2.8rem;
+      max-width: 620px;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 2.8rem;
+    }
+
+    .guide-card {
+      background-color: var(--bg);
+      padding: 1.4rem 1.6rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border);
+      transition: background-color 0.15s ease;
+    }
+
+    .guide-card:last-child {
+      border-bottom: none;
+      background-color: var(--brand-pale);
+    }
+
+    .guide-card:hover {
+      background-color: var(--brand-pale);
+    }
+
+    .guide-vol {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brand);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .guide-title {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      font-size: 0.97rem;
+      color: var(--text);
+      flex: 1;
+    }
+
+    .guide-price {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--brand);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .guide-card:last-child .guide-price {
+      font-size: 1.1rem;
+    }
+
+    .guide-card-left {
+      flex: 1;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--text);
+      padding: 2.4rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.8;
+    }
+
+    .footer-text a {
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .footer-text a:hover {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      nav {
+        padding: 0 1.25rem;
+      }
+
+      .hero, section, footer {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      .guide-card {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1.2rem 1.25rem;
+      }
+
+      .guide-price {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-brand">WNH</a>
+    <a href="https://nsag-site.vercel.app" class="nav-back">← NSAG</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="section-label">Women's Neuro-Health</p>
+      <h1>The Research Exists. Someone Has to Actually Read It.</h1>
+      <p class="hero-sub">Sex-disaggregated neuroscience on cannabis and psychedelics is scattered across hundreds of studies and behind paywalls. WNH reads the primary sources and translates them — for women and the clinicians who care for them.</p>
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="btn btn-hero">Book a Discovery Call</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="section-inner">
+      <p class="section-label">About</p>
+      <h2>The Female Nervous System Is Not a Default.</h2>
+      <p>The female nervous system is not a male nervous system with a different hormone profile. Cannabis and psychedelics interact with it differently — different receptor densities, different metabolic pathways, different psychiatric risk profiles at different life stages. Most of the guidance women receive ignores this.</p>
+      <p>WNH produces primary-source, sex-disaggregated research guides covering what the neuroscience actually says. No advocacy. No anecdote. Peer-reviewed evidence, translated into language that is usable in a clinical encounter or a personal decision.</p>
+      <p>The clinician gap is the highest-stakes entry point: providers are routinely asked questions about cannabis and psychedelics by patients who are already using these substances. Most have no primary-source training on female-specific neurological effects.</p>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="offer">
+    <div class="section-inner">
+      <p class="section-label">The Guides</p>
+      <h2>The Clinician and Consumer Guide Series</h2>
+      <p class="offer-desc">Primary-source research guides covering cannabis, psychedelics, and the female nervous system — for women making informed decisions and clinicians providing informed care.</p>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-card-left">
+            <span class="guide-vol">Vol. 1</span>
+            <span class="guide-title">Cannabis &amp; the Female Nervous System</span>
+          </div>
+          <span class="guide-price">$47</span>
+        </div>
+        <div class="guide-card">
+          <div class="guide-card-left">
+            <span class="guide-vol">Vol. 2</span>
+            <span class="guide-title">Psilocybin, Women's Mental Health &amp; Trauma</span>
+          </div>
+          <span class="guide-price">$47</span>
+        </div>
+        <div class="guide-card">
+          <div class="guide-card-left">
+            <span class="guide-vol">Vol. 3</span>
+            <span class="guide-title">PMDD, Perimenopause &amp; Cannabinoids</span>
+          </div>
+          <span class="guide-price">$47</span>
+        </div>
+        <div class="guide-card">
+          <div class="guide-card-left">
+            <span class="guide-vol">Vol. 4</span>
+            <span class="guide-title">The Clinician's Briefing — Patient Counseling</span>
+          </div>
+          <span class="guide-price">$97</span>
+        </div>
+        <div class="guide-card">
+          <div class="guide-card-left">
+            <span class="guide-vol">Full Bundle</span>
+            <span class="guide-title">All Four Volumes</span>
+          </div>
+          <span class="guide-price">$197</span>
+        </div>
+      </div>
+
+      <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" class="btn btn-brand">Book a Discovery Call</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-text">WNH is an NSAG applied brand. &nbsp;<a href="https://nsag-site.vercel.app">nsag-site.vercel.app</a> &nbsp;·&nbsp; RN Collins, M.S., J.D. Candidate &nbsp;·&nbsp; collins.ra@northeastern.edu</p>
+    </div>
+  </footer>
+
+</body>
+</html>
